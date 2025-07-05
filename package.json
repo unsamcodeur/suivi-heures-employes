@@ -1,0 +1,40 @@
+{
+  "name": "suivi-heures-employes",
+  "version": "1.0.0",
+  "description": "Application de suivi des heures de travail",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.tonnom.suiviheures",
+    "productName": "Suivi Heures Employés",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "pkg"
+      ],
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^26.6.10",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "pdfkit": "^0.17.1"
+  }
+}

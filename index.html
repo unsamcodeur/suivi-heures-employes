@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Suivi des heures</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Suivi des heures de travail</h1>
+
+  <form id="form-pointage">
+    <div id="ajout-employe">
+      <h2>Ajouter un nouvel employé</h2>
+      <input type="text" id="nouvelEmploye" placeholder="Nom de l’employé">
+      <select id="roleEmploye">
+        <option value="">-- Choisir un rôle --</option>
+        <option value="Livreur">Livreur</option>
+        <option value="Serveur">Serveur</option>
+        <option value="Cuisinier">Cuisinier</option>
+        <option value="Direction">Direction</option>
+      </select>
+      <button type="button" id="ajouterEmploye">Ajouter</button>
+      <button type="button" id="supprimerEmploye">Supprimer l’employé sélectionné</button>
+    </div>
+
+    <hr>
+
+    <label for="employe">Employé :</label>
+    <select id="employe" required>
+      <option value="">-- Sélectionner --</option>
+      <!-- Les employés sauvegardés seront ajoutés dynamiquement ici -->
+    </select>
+
+    <label for="date">Date :</label>
+    <input type="date" id="date" required>
+
+    <label for="heureDebut">Heure de début :</label>
+    <select id="heureDebut" required></select>
+
+    <label for="heureFin">Heure de fin :</label>
+    <select id="heureFin" required></select>
+
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <!-- Bouton pour télécharger le PDF global -->
+  <button id="telechargerPDF" style="margin-top: 20px;">Télécharger PDF global</button>
+
+  <h2>Historique des pointages</h2>
+  <table id="tableau-heures">
+    <thead>
+      <tr>
+        <th>Employé</th>
+        <th>Date</th>
+        <th>Début</th>
+        <th>Fin</th>
+        <th>Total (h)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Les lignes s’ajouteront ici -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

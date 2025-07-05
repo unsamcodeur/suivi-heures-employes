@@ -1,0 +1,172 @@
+/* ---- Base générale ---- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
+    color: #ffffff;
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+    overflow-x: hidden; /* Corrige tout débordement horizontal fantôme */
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #f2f2f2;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  
+  /* ---- Sections (Formulaires, Cartes) ---- */
+  form, #ajout-employe {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    background: linear-gradient(to right, #2e2e2e, #1a1a1a);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(2, 1fr);
+    transition: box-shadow 0.3s ease;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  form:hover, #ajout-employe:hover {
+    box-shadow: 0 12px 35px rgba(255, 146, 43, 0.25);
+  }
+  
+  input, select {
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 0.9rem;
+    background-color: #2c2c2c;
+    color: #fff;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    line-height: 1.2;
+    box-shadow: inset 0 0 0 1px #444;
+    height: 2.4rem;
+    width: 100%;
+    display: block;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ff922b;
+    background-color: #3c3c3c;
+  }
+  
+  select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+    background-size: 0.9rem;
+    padding-right: 1.5rem;
+    text-align: left;
+    background-color: #2c2c2c;
+    min-height: 2.4rem;
+    line-height: 1.2;
+    background-clip: padding-box;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  
+  button {
+    grid-column: span 2;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    background: linear-gradient(to right, #ffa94d, #ff922b);
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 168, 77, 0.4);
+  }
+  
+  /* ---- Tableau épuré ---- */
+  table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: none;
+  }
+  
+  thead {
+    background: none;
+    color: #ff922b;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+  
+  th {
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+  
+  td {
+    background: #2d2d2d;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    text-align: center;
+    transition: background 0.2s;
+    border-bottom: none;
+  }
+  
+  tbody tr:hover td {
+    background-color: #3a3a3a;
+  }
+  
+  tr.ligne-ajoutee td {
+    animation: highlightNewRow 0.6s ease-in-out;
+  }
+  
+  @keyframes highlightNewRow {
+    0% {
+      background-color: #ff922b;
+      color: #1a1a1a;
+    }
+    100% {
+      background-color: #2d2d2d;
+      color: #fff;
+    }
+  }
+  
+  option {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }  
+  
+  /* ---- Responsive ---- */
+  @media (max-width: 600px) {
+    form, #ajout-employe {
+      grid-template-columns: 1fr;
+    }
+    button {
+      grid-column: span 1;
+    }
+    th, td {
+      font-size: 0.9rem;
+    }
+    select {
+      font-size: 0.95rem;
+    }
+  }
+  
