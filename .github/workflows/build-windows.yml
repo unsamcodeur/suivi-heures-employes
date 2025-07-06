@@ -21,11 +21,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build the app for Windows
-      run: npm run dist
+    - name: Build app for Windows
+      run: |
+        npm install --save-dev electron-builder
+        npx electron-builder --win
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: sweetyclock-exe
+        name: windows-build
         path: dist/*.exe
+
