@@ -33,4 +33,3 @@ jobs:
         path: dist/*.exe
             env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
