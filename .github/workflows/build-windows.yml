@@ -31,4 +31,6 @@ jobs:
       with:
         name: windows-build
         path: dist/*.exe
+            env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
