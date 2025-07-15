@@ -36,8 +36,18 @@ function chargerPointages() {
   return liste;
 }
 
+// Fonction utilitaire pour s'assurer que les dossiers existent
+function ensureDirectoryExistence(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+}
+
 // === INIT ===
 window.addEventListener("DOMContentLoaded", () => {
+  // Création automatique des dossiers 'data' et 'exports'
+  ensureDirectoryExistence(path.join(__dirname, "data"));
+  ensureDirectoryExistence(path.join(__dirname, "exports"));
   const champDate = document.getElementById("date");
   const today = new Date();
   champDate.value = today.toISOString().slice(0, 10);
